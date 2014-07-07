@@ -114,30 +114,43 @@ public class RESTResource {
     	return rootElem.getChildText("nativeCRS");
     }
 
-    public String getCRS() {
-        Element elBBox = rootElem.getChild("latLonBoundingBox");
-        return elBBox.getChildText("crs");
-    }
+	public RESTBoundingBox getNativeBoundingBox() {
+		RESTBoundingBox bbox = null;
+		Element bboxElement = rootElem.getChild("nativeBoundingBox");
+		if (bboxElement != null) {
+			bbox = new RESTBoundingBox(bboxElement);
+		}
+		return bbox;
+	}
+	
+	public RESTBoundingBox getLatLonBoundingBox() {
+		RESTBoundingBox bbox = null;
+		Element bboxElement = rootElem.getChild("latLonBoundingBox");
+		if (bboxElement != null) {
+			bbox = new RESTBoundingBox(bboxElement);
+		}
+		return bbox;
+	}
 
-    protected double getLatLonEdge(String edge) {
-        Element elBBox = rootElem.getChild("latLonBoundingBox");
-        return Double.parseDouble(elBBox.getChildText(edge));
+    public String getCRS() {
+    	RESTBoundingBox bbox = this.getLatLonBoundingBox();
+    	return bbox.getCRS();
     }
 
     public double getMinX() {
-        return getLatLonEdge("minx");
+        return this.getLatLonBoundingBox().getMinX();
     }
 
     public double getMaxX() {
-        return getLatLonEdge("maxx");
+    	return this.getLatLonBoundingBox().getMaxX();
     }
 
     public double getMinY() {
-        return getLatLonEdge("miny");
+    	return this.getLatLonBoundingBox().getMinY();
     }
 
     public double getMaxY() {
-        return getLatLonEdge("maxy");
+    	return this.getLatLonBoundingBox().getMaxY();
     }
 
     /**
