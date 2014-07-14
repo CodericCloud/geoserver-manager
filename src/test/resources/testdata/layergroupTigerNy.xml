@@ -1,0 +1,45 @@
+
+<layerGroup>
+  <name>tiger-ny</name>
+  <mode>SINGLE</mode>
+  <publishables>
+    <published type="layer">
+      <name>giant_polygon</name>
+      <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="http://localhost:8080/geoserver/rest/layers/giant_polygon.xml" type="application/xml"/>
+    </published>
+    <published type="layer">
+      <name>poly_landmarks</name>
+      <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="http://localhost:8080/geoserver/rest/layers/poly_landmarks.xml" type="application/xml"/>
+    </published>
+    <published type="layer">
+      <name>tiger_roads</name>
+      <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="http://localhost:8080/geoserver/rest/layers/tiger_roads.xml" type="application/xml"/>
+    </published>
+    <published type="layer">
+      <name>poi</name>
+      <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="http://localhost:8080/geoserver/rest/layers/poi.xml" type="application/xml"/>
+    </published>
+  </publishables>
+  <styles>
+    <style>
+      <name>giant_polygon</name>
+      <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="http://localhost:8080/geoserver/rest/styles/giant_polygon.xml" type="application/xml"/>
+    </style>
+    <style>
+      <name>poly_landmarks</name>
+      <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="http://localhost:8080/geoserver/rest/styles/poly_landmarks.xml" type="application/xml"/>
+    </style>
+    <style/>
+    <style/>
+  </styles>
+  <bounds>
+    <minx>-74.047185</minx>
+    <maxx>-73.907005</maxx>
+    <miny>40.679648</miny>
+    <maxy>40.882078</maxy>
+    <crs>EPSG:4326</crs>
+  </bounds>
+  <metadata>
+    <entry key="rawStyleList"></entry>
+  </metadata>
+</layerGroup>

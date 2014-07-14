@@ -160,4 +160,13 @@ public class RESTLayerGroup {
 	public double getMaxY() {
 		return getBound("maxy");
 	}
+	
+	public RESTStyleList getStyles() {
+		Element styleElem = rootElem.getChild("styles");
+		if (styleElem != null) {
+			return new RESTStyleList(styleElem);
+		} else {
+			return null;
+		}
+	}
 }
